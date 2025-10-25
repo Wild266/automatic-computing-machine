@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Frutiger Aero Playground</title>
+  <meta name="description" content="Playful, glossy, bubbly — a personal homepage inspired by Frutiger Aero." />
+  <meta name="theme-color" content="#0ea5a5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated background canvas -->
+  <canvas id="ocean" aria-hidden="true"></canvas>
+
+  <!-- Lens flares / gradient blobs -->
+  <div class="flares" aria-hidden="true">
+    <div class="flare f1"></div>
+    <div class="flare f2"></div>
+    <div class="flare f3"></div>
+  </div>
+
+  <!-- Dolphins (DOM-SVG so we can click them) -->
+  <div id="dolphin-layer" aria-hidden="true">
+    <svg class="dolphin" viewBox="0 0 256 128" width="160" role="img" aria-label="Dolphin">
+      <path class="dl-body" d="M10,70 C40,30 110,30 142,60 C175,91 198,86 240,76 C220,84 218,98 208,100 C188,104 174,95 160,88 C142,106 112,114 88,106 C64,98 44,82 36,74 C30,90 26,95 20,98 C16,92 12,84 10,70Z" />
+      <path class="dl-fin" d="M110,72 C118,62 122,56 124,52 C126,56 128,62 134,72 C126,74 118,74 110,72Z" />
+      <circle class="dl-eye" cx="160" cy="72" r="3" />
+    </svg>
+    <svg class="dolphin mirror" viewBox="0 0 256 128" width="140" role="img" aria-label="Dolphin">
+      <path class="dl-body" d="M10,70 C40,30 110,30 142,60 C175,91 198,86 240,76 C220,84 218,98 208,100 C188,104 174,95 160,88 C142,106 112,114 88,106 C64,98 44,82 36,74 C30,90 26,95 20,98 C16,92 12,84 10,70Z" />
+      <path class="dl-fin" d="M110,72 C118,62 122,56 124,52 C126,56 128,62 134,72 C126,74 118,74 110,72Z" />
+      <circle class="dl-eye" cx="160" cy="72" r="3" />
+    </svg>
+  </div>
+
+  <!-- Foreground glass card -->
+  <main class="shell">
+    <section class="card glass">
+      <img class="avatar" src="assets/images/profile-placeholder.png" alt="Portrait of Your Name" width="164" height="164" />
+      <div class="copy">
+        <h1>Hey, I’m <span class="name">Your Name</span> 🐬</h1>
+        <p class="blurb">Building playful <strong>ML + web</strong> things that feel like a sunny day by the sea. 🌊🫧✨</p>
+        <div class="actions">
+          <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/yourname/" target="_blank" rel="noopener">LinkedIn</a>
+          <button id="songsBtn" class="btn glassy" aria-haspopup="dialog" aria-controls="playerPanel">🎵 Favorite songs</button>
+        </div>
+        <p class="hint">Tip: click the dolphins and bubbles!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Music player (minimal) -->
+  <dialog id="playerPanel" class="player glass">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <header>
+      <h2>Favorite songs</h2>
+      <p class="muted">Includes “Island Song — Ashley Eriksson” (add more below)</p>
+    </header>
+    <div class="controls">
+      <button id="prevBtn" class="ctrl">⏮</button>
+      <button id="playPauseBtn" class="ctrl">▶️/⏸</button>
+      <button id="nextBtn" class="ctrl">⏭</button>
+      <button id="addBtn" class="ctrl">➕ Add</button>
+    </div>
+    <div id="nowPlaying" class="now-playing">—</div>
+    <div id="songList" class="song-list"></div>
+    <div id="youtubeContainer" class="yt"></div>
+    <audio id="audioPlayer" crossorigin="anonymous"></audio>
+  </dialog>
+
+  <footer class="credits">
+    <p>© <span id="year"></span> Your Name • Frutiger Aero vibes • Built with semantic HTML & Web APIs.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

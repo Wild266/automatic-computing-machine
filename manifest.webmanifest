@@ -1,0 +1,9 @@
+{
+  "name": "Frutiger Aero — Your Name",
+  "short_name": "Aero Site",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#c2f9ff",
+  "theme_color": "#0ea5a5",
+  "icons": [{ "src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
