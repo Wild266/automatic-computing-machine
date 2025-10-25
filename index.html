@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Frutiger Aero</title>
+  <meta name="description" content="Playful, glossy, bubbly — a Frutiger Aero personal homepage." />
+  <meta name="theme-color" content="#0ea5a5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wallpaper" aria-hidden="true"></div>
+  <canvas id="ocean" aria-hidden="true"></canvas>
+  <div id="cc0-bubbles" class="layer" aria-hidden="true"></div>
+  <div id="cc0-dolphins" class="layer" aria-hidden="true"></div>
+
+  <main class="shell" role="main">
+    <section class="card glass">
+      <img class="avatar" src="assets/images/profile-placeholder.png" alt="Portrait of Your Name" width="164" height="164" />
+      <div class="copy">
+        <h1>Hey, I’m <span class="name">Your Name</span> 🐬</h1>
+        <p class="blurb">Building playful <strong>ML + web</strong> things that feel like a sunny day by the sea. 🌊🫧✨</p>
+        <div class="actions">
+          <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/yourname/" target="_blank" rel="noopener">LinkedIn</a>
+          <button id="songsBtn" class="btn glassy" aria-haspopup="dialog" aria-controls="playerPanel">🎵 Favorite songs</button>
+        </div>
+        <p class="hint">Tip: click dolphins / bubbles. Real art assets are CC0 and shipped locally.</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="playerPanel" class="player glass">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <header>
+      <h2>Favorite songs</h2>
+      <p class="muted">Includes “Island Song — Ashley Eriksson” (add more below)</p>
+    </header>
+    <div class="controls">
+      <button id="prevBtn" class="ctrl">⏮</button>
+      <button id="playPauseBtn" class="ctrl">▶️/⏸</button>
+      <button id="nextBtn" class="ctrl">⏭</button>
+      <button id="addBtn" class="ctrl">➕ Add</button>
+    </div>
+    <div id="nowPlaying" class="now-playing">—</div>
+    <div id="songList" class="song-list"></div>
+    <div id="youtubeContainer" class="yt"></div>
+    <audio id="audioPlayer" crossorigin="anonymous"></audio>
+  </dialog>
+
+  <footer class="credits">
+    <p>© <span id="year"></span> Your Name • Frutiger Aero vibes • CC0 assets + gentle Canvas.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+  {
+    "type": "youtube",
+    "title": "Island Song (Come Along With Me)",
+    "artist": "Ashley Eriksson",
+    "youtubeId": "REPLACE_WITH_OFFICIAL_YOUTUBE_ID"
+  },
+  {
+    "type": "audio",
+    "title": "Ocean breeze (ambient)",
+    "artist": "CC0 sample",
+    "url": "assets/ocean-ambient-placeholder.wav"
+  }
+]
